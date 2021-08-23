@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+  <RecipeDef Name="jmj_cremateCorpseBase" Abstract="true">
+    <workSpeedStat>GeneralLaborSpeed</workSpeedStat>
+    <effectWorking>Cremate</effectWorking>
+    <soundWorking>Recipe_Cremate</soundWorking>
+    <jobString>Cremating.</jobString>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+  </RecipeDef>
+
+  <RecipeDef ParentName="jmj_cremateCorpseBase">
+    <defName>jmj_CremateCorpseStrip</defName>
+    <label>strip and cremate corpse</label>
+    <description>Strip and cremate a corpse to completely destroy it.</description>
+    <workAmount>240</workAmount>
+    <autoStripCorpses>true</autoStripCorpses>
+    <ingredients>
+      <li>
+        <filter>
+          <categories>
+            <li>Corpses</li>
+          </categories>
+        </filter>
+        <count>1</count>
+      </li>
+    </ingredients>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+    </fixedIngredientFilter>
+    <defaultIngredientFilter>
+      <categories>
+        <li>CorpsesHumanlike</li>
+      </categories>
+      <specialFiltersToAllow>
+        <li>AllowCorpsesColonist</li>
+        <li>AllowCorpsesStranger</li>
+      </specialFiltersToAllow>
+    </defaultIngredientFilter>
+  </RecipeDef>
+
+  <RecipeDef ParentName="jmj_cremateCorpseBase">
+    <defName>jmj_CremateRottenAnimalCorpse</defName>
+    <label>cremate rotten animal corpse</label>
+    <description>Cremate an animal corpse to completely destroy it.</description>
+    <workAmount>180</workAmount>
+    <autoStripCorpses>false</autoStripCorpses>
+
+    <fixedIngredientFilter>
+      <categories>
+        <li>Corpses</li>
+      </categories>
+      <disallowedCategories>
+        <li>CorpsesMechanoid</li>
+        <li>CorpsesHumanlike</li>
+      </disallowedCategories>
+      <specialFiltersToDisallow>
+        <li>AllowFresh</li>
+      </specialFiltersToDisallow>
+    </fixedIngredientFilter>
+
+  </RecipeDef>
+
+  <RecipeDef ParentName="jmj_cremateCorpseBase">
+    <defName>jmj_CremateInsectCorpse</defName>
+    <label>cremate insect corpse</label>
+    <description>Cremate an insect corpse to completely destroy it.</description>
+    <workAmount>180</workAmount>
+    <autoStripCorpses>false</autoStripCorpses>
+    <fixedIngredientFilter>
+      <categories>
+        <li>CorpsesInsect</li>
+      </categories>
+    </fixedIngredientFilter>
+  </RecipeDef>
+
+</Defs>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Patch>
+	<!-- Adding as patches to put the recipes in sensible order -->
+	<Operation Class="PatchOperationInsert">
+		<xpath>/Defs/ThingDef[defName = "ElectricCrematorium"]/recipes/li[text() = "BurnApparel"]</xpath>
+		<value>
+			<li>jmj_CremateInsectCorpse</li>
+			<li>jmj_CremateRottenAnimalCorpse</li>
+			<li>jmj_CremateCorpseStrip</li>
+		</value>
+	</Operation>
+	<Operation Class="PatchOperationRemove">
+		<xpath>*/RecipeDef[defName = "CremateCorpse" or defName = "CremateCorpseStrip"]/defaultIngredientFilter/specialFiltersToAllow/li[text() = "AllowCorpsesColonist"]</xpath>
+	</Operation>
+</Patch>
