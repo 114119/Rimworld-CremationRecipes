@@ -43,9 +43,13 @@
         <li>CorpsesHumanlike</li>
       </categories>
       <specialFiltersToAllow>
-        <li>AllowCorpsesColonist</li>
+        
+	<li MayRequire="Ludeon.RimWorld.Ideology">AllowCorpsesSlave</li>
         <li>AllowCorpsesStranger</li>
       </specialFiltersToAllow>
+	<specialFiltersToDisallow>
+            <li>AllowCorpsesColonist</li>
+          </specialFiltersToDisallow>
     </defaultIngredientFilter>
   </RecipeDef>
 
